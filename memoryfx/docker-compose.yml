@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  memory-game:
+    build: .
+    ports:
+      - "6080:6080"   # noVNC web access
+      - "5901:5901"   # VNC direct access
+    environment:
+      - DISPLAY=:99
+    mem_limit: 1g
+    cpus: 1.0
+    restart: unless-stopped
+    volumes:
+      - memory-data:/root/.memorycardflip
+
+volumes:
+  memory-data:

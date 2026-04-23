@@ -14,19 +14,23 @@ public class Card {
         this.isFlipped = false;
         this.isMatched = false;
     }
-
+    //lật thẻ
     public void flip() {
         if (!isMatched) {
             isFlipped = !isFlipped;
         }
     }
-
+    // Đánh dấu thẻ đã lật
     public void match() {
         this.isMatched = true;
+        this.isFlipped = true;
     }
 
-    // Getter & Setter
+    public String getId() { return id; }
+    public CardType getType() { return type; }
+    public String getImageURL() { return imageURL; }
     public boolean isFlipped() { return isFlipped; }
     public boolean isMatched() { return isMatched; }
-    public CardType getType() { return type; }
+    public void setFlipped(boolean flipped) { isFlipped = flipped; }
+
 }

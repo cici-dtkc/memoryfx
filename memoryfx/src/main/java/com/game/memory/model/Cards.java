@@ -1,13 +1,13 @@
 package com.game.memory.model;
-
-public class Card {
+import com.game.memory.model.CardType;
+public class Cards {
     private String id;
     private CardType type;
     private String imageURL;
     private boolean isFlipped;
     private boolean isMatched;
 
-    public Card(String id, CardType type, String imageURL) {
+    public Cards(String id, CardType type, String imageURL) {
         this.id = id;
         this.type = type;
         this.imageURL = imageURL;
@@ -32,5 +32,7 @@ public class Card {
     public boolean isFlipped() { return isFlipped; }
     public boolean isMatched() { return isMatched; }
     public void setFlipped(boolean flipped) { isFlipped = flipped; }
-
+    public void setMatched(boolean matched) {
+        this.isMatched = matched;
+    }
 }

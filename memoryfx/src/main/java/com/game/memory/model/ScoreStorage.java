@@ -1,5 +1,9 @@
-import java.util.*;
+package com.game.memory.model;
 
+import com.game.memory.model.ScoreRecord;
+
+import java.util.*;
+import java.io.*;
 public class ScoreStorage {
 
     private static final String FILE_PATH = "scores.json";

@@ -1,22 +1,22 @@
 import java.util.*;
 
 public class GameState {
-    private List<Card> card;
+    private List<Card> cards;
     private List<Card> flippedCards;
     private int matchedPairs;
     private int totalPairs;
     private int moves;
-    private int elapsedTime;
+    private long elapsedTime;
     private GameStatus status;
 
-    public GameState(List<Card> card) {
-        this.card = card;
+    public GameState(List<Card> cards) {
+        this.cards = cards;
         this.flippedCards = new ArrayList<>();
         this.totalPairs = cards.size() / 2;
         this.matchedPairs = 0;
         this.moves = 0;
         this.elapsedTime = 0;
-        this.status = GameStatus.PLAYING;
+        this.status = GameStatus.IDLE;
     }
     //  Kiểm tra game hoàn thành
     public boolean isComplete() {
@@ -34,6 +34,7 @@ public class GameState {
     public void reset() {
         for (Card card : cards) {
             card.setFlipped(false);
+            card.setMatched(false);
         }
         flippedCards.clear();
         matchedPairs = 0;

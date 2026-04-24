@@ -1,5 +1,4 @@
 package com.game.memory.model;
-import com.game.memory.model.CardType;
 public class Cards {
     private String id;
     private CardType type;

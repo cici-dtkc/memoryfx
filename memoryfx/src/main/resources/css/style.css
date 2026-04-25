@@ -1,0 +1,163 @@
+.root {
+  -fx-font-family: "Segoe UI", "Verdana", sans-serif;
+}
+
+.home-screen {
+  -fx-background-color: linear-gradient(to bottom, #ebf7ff 0%, #f4fbff 52%, #a5cfff 100%);
+}
+
+.home-shell {
+  -fx-background-color: rgba(255, 255, 255, 0.86);
+  -fx-background-radius: 36;
+  -fx-border-color: rgba(255, 255, 255, 0.95);
+  -fx-border-width: 2;
+  -fx-border-radius: 36;
+  -fx-effect: dropshadow(gaussian, rgba(145, 168, 201, 0.18), 35, 0.18, 0, 8);
+}
+
+.home-content {
+  -fx-alignment: top-center;
+}
+
+.home-title-box {
+  -fx-alignment: center;
+}
+
+.home-title {
+  -fx-font-size: 36px;
+  -fx-font-weight: 900;
+  -fx-text-fill: #4b5575;
+}
+
+.home-subtitle {
+  -fx-font-size: 15px;
+  -fx-font-weight: 600;
+  -fx-text-fill: #7f8aa8;
+}
+
+.card-illustration {
+  -fx-alignment: center;
+}
+
+.illustration-blob-left {
+  -fx-fill: #ffe2d2;
+}
+
+.illustration-blob-right {
+  -fx-fill: #d9f1ff;
+}
+
+.illustration-card {
+  -fx-stroke-width: 3;
+  -fx-effect: dropshadow(gaussian, rgba(127, 138, 168, 0.18), 14, 0.15, 0, 4);
+}
+
+.card-back-left {
+  -fx-fill: #ffdab9;
+  -fx-stroke: #efa370;
+}
+
+.card-back-right {
+  -fx-fill: #cbe7ff;
+  -fx-stroke: #75a8e5;
+}
+
+.card-front {
+  -fx-fill: #fff6d9;
+  -fx-stroke: #e8be59;
+}
+
+.card-illustration-icon {
+  -fx-font-size: 42px;
+  -fx-font-weight: 900;
+  -fx-text-fill: #f29a62;
+}
+
+.card-illustration-text {
+  -fx-font-size: 18px;
+  -fx-font-weight: 900;
+  -fx-text-fill: #5c678c;
+}
+
+.difficulty-section {
+  -fx-alignment: center;
+}
+
+.difficulty-options {
+  -fx-alignment: center;
+}
+
+.difficulty-section-title {
+  -fx-font-size: 18px;
+  -fx-font-weight: 900;
+  -fx-text-fill: #5e698f;
+}
+
+.difficulty-card {
+  -fx-alignment: center;
+  -fx-background-radius: 26;
+  -fx-border-radius: 26;
+  -fx-border-color: white;
+  -fx-border-width: 2;
+  -fx-padding: 20 16 18 16;
+}
+
+.difficulty-card:selected {
+  -fx-border-width: 3;
+}
+
+.difficulty-easy {
+  -fx-background-color: linear-gradient(to bottom, #bfecc7 0%, #f4fff6 100%);
+}
+
+.difficulty-easy:selected {
+  -fx-border-color: #74be87;
+}
+
+.difficulty-medium {
+  -fx-background-color: linear-gradient(to bottom, #cbe4ff 0%, #f5faff 100%);
+}
+
+.difficulty-medium:selected {
+  -fx-border-color: #6c9fe5;
+}
+
+.difficulty-hard {
+  -fx-background-color: linear-gradient(to bottom, #ffd9b8 0%, #fff8f1 100%);
+}
+
+.difficulty-hard:selected {
+  -fx-border-color: #f29a62;
+}
+
+.difficulty-vi-label {
+  -fx-font-size: 17px;
+  -fx-font-weight: 900;
+  -fx-text-fill: #516183;
+}
+
+.difficulty-en-label {
+  -fx-font-size: 22px;
+  -fx-font-weight: 900;
+  -fx-text-fill: #3f4c6c;
+}
+
+.difficulty-size-label {
+  -fx-font-size: 14px;
+  -fx-font-weight: 700;
+  -fx-text-fill: #6f7c9d;
+}
+
+.start-game-button {
+  -fx-background-color: linear-gradient(to right, #f7b267, #f79d84);
+  -fx-background-radius: 20;
+  -fx-text-fill: white;
+  -fx-font-size: 18px;
+  -fx-font-weight: 900;
+  -fx-padding: 14 28 14 28;
+  -fx-effect: dropshadow(gaussian, rgba(242, 154, 98, 0.28), 24, 0.18, 0, 7);
+}
+
+.start-game-button:hover {
+  -fx-background-color: linear-gradient(to right, #f9bd7f, #f8ab94);
+}

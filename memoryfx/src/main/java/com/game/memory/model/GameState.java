@@ -1,16 +1,19 @@
+package com.game.memory.model;
+import com.game.memory.model.GameStatus;
+
+
 import java.util.*;
 
 public class GameState {
-    private List<Card> card;
+    private List<Card> cards;
     private List<Card> flippedCards;
     private int matchedPairs;
     private int totalPairs;
     private int moves;
-    private int elapsedTime;
+    private long elapsedTime;
     private GameStatus status;
-
-    public GameState(List<Card> card) {
-        this.card = card;
+    public GameState(List<Card> cards) {
+        this.cards = cards;
         this.flippedCards = new ArrayList<>();
         this.totalPairs = cards.size() / 2;
         this.matchedPairs = 0;
@@ -26,7 +29,7 @@ public class GameState {
     //  Tính điểm theo SRS
     public int getScore() {
         int wrongAttempts = moves - matchedPairs;
-        int score = (matchedPairs * 100) - (wrongAttempts * 10) + (int)(elapsedTime * 5);
+        int score = (matchedPairs * 100) - (wrongAttempts * 10) - (int)(elapsedTime * 5);
         return Math.max(0, score);
     }
 
@@ -34,17 +37,18 @@ public class GameState {
     public void reset() {
         for (Card card : cards) {
             card.setFlipped(false);
+            card.setMatched(false);
         }
         flippedCards.clear();
         matchedPairs = 0;
         moves = 0;
         elapsedTime = 0;
-        status = GameStatus.IDLE;
+        status = GameStatus.PLAYING;
     }
 
     //  Thêm thẻ đang lật
     public void addFlippedCard(Card card) {
-        if (flippedCards.size() < 2) {
+        if (flippedCards.size() < 2 && !flippedCards.contains(card)) {
             flippedCards.add(card);
         }
     }
@@ -66,8 +70,11 @@ public class GameState {
             c2.match();
             matchedPairs++;
             return true;
+        } else {
+            c1.setFlipped(false);
+            c2.setFlipped(false);
+            return false;
         }
-        return false;
     }
 
     public List<Card> getCards() { return cards; }

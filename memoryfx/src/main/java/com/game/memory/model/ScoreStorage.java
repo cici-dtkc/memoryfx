@@ -1,3 +1,6 @@
+package com.game.memory.model;
+
+import java.io.*;
 import java.util.*;
 
 public class ScoreStorage {

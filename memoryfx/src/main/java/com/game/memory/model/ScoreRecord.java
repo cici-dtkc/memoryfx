@@ -1,5 +1,5 @@
 package com.game.memory.model;
-
+import com.google.gson.Gson;
 public class ScoreRecord {
     private String playerName;
     private int score;

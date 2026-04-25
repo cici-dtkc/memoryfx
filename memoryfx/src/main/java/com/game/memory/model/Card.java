@@ -14,16 +14,24 @@ public class Card {
         this.isFlipped = false;
         this.isMatched = false;
     }
-    //lật thẻ
+
     public void flip() {
         if (!isMatched) {
             isFlipped = !isFlipped;
         }
     }
-    // Đánh dấu thẻ đã lật
+
     public void match() {
         this.isMatched = true;
         this.isFlipped = true;
+    }
+
+    public void setMatched(boolean matched) {
+        this.isMatched = matched;
+    }
+
+    public void setFlipped(boolean flipped) {
+        this.isFlipped = flipped;
     }
 
     public String getId() { return id; }
@@ -31,6 +39,4 @@ public class Card {
     public String getImageURL() { return imageURL; }
     public boolean isFlipped() { return isFlipped; }
     public boolean isMatched() { return isMatched; }
-    public void setFlipped(boolean flipped) { isFlipped = flipped; }
-
 }

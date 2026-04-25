@@ -5,14 +5,14 @@ import com.game.memory.model.GameStatus;
 import java.util.*;
 
 public class GameState {
-    private List<Card> cards;
-    private List<Card> flippedCards;
+    private List<Cards> cards;
+    private List<Cards> flippedCards;
     private int matchedPairs;
     private int totalPairs;
     private int moves;
     private long elapsedTime;
     private GameStatus status;
-    public GameState(List<Card> cards) {
+    public GameState(List<Cards> cards) {
         this.cards = cards;
         this.flippedCards = new ArrayList<>();
         this.totalPairs = cards.size() / 2;
@@ -35,7 +35,7 @@ public class GameState {
 
     //  Reset game
     public void reset() {
-        for (Card card : cards) {
+        for (Cards card : cards) {
             card.setFlipped(false);
             card.setMatched(false);
         }
@@ -47,7 +47,7 @@ public class GameState {
     }
 
     //  Thêm thẻ đang lật
-    public void addFlippedCard(Card card) {
+    public void addFlippedCard(Cards card) {
         if (flippedCards.size() < 2 && !flippedCards.contains(card)) {
             flippedCards.add(card);
         }
@@ -62,8 +62,8 @@ public class GameState {
     public boolean checkMatch() {
         if (flippedCards.size() < 2) return false;
 
-        Card c1 = flippedCards.get(0);
-        Card c2 = flippedCards.get(1);
+        Cards c1 = flippedCards.get(0);
+        Cards c2 = flippedCards.get(1);
 
         if (c1.getType() == c2.getType()) {
             c1.match();
@@ -77,8 +77,8 @@ public class GameState {
         }
     }
 
-    public List<Card> getCards() { return cards; }
-    public List<Card> getFlippedCards() { return flippedCards; }
+    public List<Cards> getCards() { return cards; }
+    public List<Cards> getFlippedCards() { return flippedCards; }
     public int getMoves() { return moves; }
     public int getMatchedPairs() { return matchedPairs; }
     public long getElapsedTime() { return elapsedTime; }
